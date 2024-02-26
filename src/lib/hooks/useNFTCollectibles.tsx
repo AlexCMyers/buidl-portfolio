@@ -30,7 +30,7 @@ export const useNFTCollectibles = (
   const [data, setData] = useState<Array<any>>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Maybe<string>>(null);
-
+  // fetching data outside of site
   useEffect(() => {
     const load = async () => {
       setLoading(true);

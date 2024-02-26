@@ -9,6 +9,7 @@ import { profile } from "@/data/profile";
 import { ConnectKitButton } from "connectkit";
 import { SendTransaction } from "@/components/SendTransaction";
 
+// couldve been its own component
 function LinkCard({
   href,
   title,
@@ -77,6 +78,7 @@ const Page: React.FC = () => {
         className="fixed z-[-1] top-0 left-0 object-cover md:h-96 min-h-48 w-full"
       />
       <div className="fixed top-3 right-3 z-10">
+        {/* the only thing needed to make the wallet connection work */}
         <ConnectKitButton />
       </div>
       <Wrapper>
@@ -98,6 +100,7 @@ const Page: React.FC = () => {
             <p className="text-white text-center text-base my-8">
               {profile?.bio ?? ""}
             </p>
+            {/* react component by shadecn; under the hood uses UseState */}
             <Tabs defaultValue="links" className="w-full">
               <TabsList className="flex items-center justify-center">
                 <TabsTrigger value="links">Links</TabsTrigger>
